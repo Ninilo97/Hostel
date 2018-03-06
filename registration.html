@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-toggleable-md fixed-top scrolling-navbarbg-faded">
+    <a class="navbar-brand" href="index.html#Home">
+      <img src="images/Logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
+      AGNEL HOSTEL
+    </a>
+  </nav>
+
+  <div class="Home">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-6 col-md-6">
+          <h1 class="display-3 text-center">Register</h1>
+          <p class="lead text-center">Registration for admission now open</p>
+          <hr style="width: 80%; color: white; height: 2px; background-color:white;" />
+          <div id="bandLink" class="text-center">
+            <button class="btn btn-outline-secondary">Register>></button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-6">
+          <h1 class="display-3 text-center">Rule</h1>
+          <p class="lead text-center">Read hostel rules before registering</p>
+          <hr style="width: 80%; color: white; height: 2px; background-color:white;" />
+          <div id="sh" class="text-center">
+            <button class="btn btn-outline-secondary" onclick="funcShow2()">Rules>></button>
+          </div>
+          <div id="hd" class="text-center collapse">
+            <embed src="demo.pdf" width="100%" height="100%" type='application/pdf'></embed>
+            <button class="btn btn-outline-secondary" onclick="funcShow2()">Minimize<</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="band" class="band">
+  </div>
+
+  <div id="Regp1" class="Reg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+        </div>
+        <div class="col-12 col-md-6">
+          <form name="Rform" class="form" id="form2" method="post" action="Register.php">
+
+
+
+            <fieldset class="f1">
+              <div>
+                <legend>Personal Details</legend>
+              </div>
+              <div class="form-group bs-float-label">
+                <input name="name" id="Rform1" type="text" class="form-control float-input" placeholder="Name" required/>
+                <label for="Rform1" class="float-label">Name</label>
+              </div>
+              <div class="form-group bs-float-label date">
+                <input name="dob" type="text" class="form-control float-input" id="Rform2" placeholder="Date of Birth" required/>
+                <label for="Rform2" class="float-label">Date of birth</label>
+              </div>
+              <div class="form-group  bs-float-label">
+                <label for="Rform3" class="float-label">Category</label>
+                <select name="cat" class="form-control float-input" id="Rform3" required>
+                  <option Value="Category" disabled selected>Category</option>
+                  <option Value="Open">Open</option>
+                  <option Value="SC">SC</option>
+                  <option Value="ST">ST</option>
+                  <option Value="OBC">OBC</option>
+                  <option Value="SBC">SBC</option>
+                  <option Value="VJ">VJ</option>
+                  <option Value="NT-B">NT-B</option>
+                  <option Value="NT-C">NT-C</option>
+                  <option Value="NT-D">NT-D</option>
+                </select>
+              </div>
+              <div class="form-group bs-float-label">
+                <span>
+                  <label for="Rform4" class="form-control float-input">Physical disability</label>
+                  <label class="radio form-control float-input" style="width:50%;"><input name="disability" type="radio" value="Yes">Yes</label>
+                  <label class="radio form-control float-input" style="width:50%;"><input name="disability" type="radio" value="No">No</label>
+                </span>
+              </div>
+              <div class="text-center">
+                <input type="button" name="next1" class="next_fs btn btn-outline-secondary" value="Next"/>
+              </div>
+            </fieldset>
+
+
+
+            <fieldset class="f2 hidden">
+              <div>
+                <legend>Contact Details</legend>
+              </div>
+              <div class="md-form form-sm form-group bs-float-label">
+                <label for="Rform5" class="float-label">Phone Number</label>
+                <input type="tel" name="mobilenumber" class="form-control float-input" id="Rform5" placeholder="Phone Number" required>
+              </div>
+              <div class="md-form form-sm form-group bs-float-label">
+                <label for="Rform6" class="float-label">Email</label>
+                <input type="email" name="email" class="form-control float-input" id="Rform6" placeholder="Email" required>
+              </div>
+              <div class="Perma">
+                <div>
+                  <legend>Permanent Address</legend>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label class="float-label" for="Rform7">Line 1</label>
+                  <input name="line1" id="Rform7" type="text" placeholder="Street Address" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform8" class="float-label">Post Code</label>
+                  <input name="postcode" id="Rform8" type="text" placeholder="Post Code" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform9" class="float-label">City</label>
+                  <input name="city" id="Rform9" type="text" placeholder="City" class="form-control float-input">
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform10" class="float-label">State</label>
+                  <input name="state" id="Rform10" type="text" placeholder="State" class="form-control float-input">
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform11" class="float-label">Country</label>
+                  <input name="country" id="Rform11" type="text" placeholder="Country" class="form-control float-input" required>
+                </div>
+              </div>
+              <div class="form-group bs-float-label">
+                <span>
+                  <label for="Rform17" class="form-control float-input">Is Correspondence address same as Permanent address?</label>
+                  <label class="radio form-control float-input" style="width:50%;"><input type="radio" id="Rform12" name="Perma" value="Yes"/>Yes</label>
+                  <label class="radio form-control float-input" style="width:50%;"><input type="radio" id="Rform12" name="Perma" value="No"/>No</label>
+                </span>
+              </div>
+              <div class="temp hidden">
+                <div>
+                  <legend>Correspondence Address</legend>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label class="float-label" for="Rform13">Street Address</label>
+                  <input name="Cline1" id="Rform13" type="text" placeholder="Street Address" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform14" class="float-label">Post Code</label>
+                  <input name="Cpostcode" id="Rform14" type="text" placeholder="Post Code" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform15" class="float-label">City</label>
+                  <input name="Ccity" id="Rform15" type="text" placeholder="City" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform16" class="float-label">State</label>
+                  <input name="Cstate" id="Rform16" type="text" placeholder="State" class="form-control float-input" required>
+                </div>
+                <div class="md-form form-sm form-group bs-float-label">
+                  <label for="Rform17" class="float-label">Country</label>
+                  <input name="Ccountry" id="Rform17" type="text" placeholder="Country" class="form-control float-input" required>
+                </div>
+              </div>
+              <div class="text-center">
+                <input type="button" name="prev1" class="prev_fs btn btn-outline-secondary" value="Previous"/>
+                <input type="button" name="next2" class="next_fs btn btn-outline-secondary" value="Next"/>
+              </div>
+            </fieldset>
+
+
+
+            <fieldset class="f3 hidden">
+              <legend>Emergency Contact</legend>
+              <div class="form-group bs-float-label">
+                <input name="Ename" id="Rform18" type="text" class="form-control float-input" placeholder="Name" required/>
+                <label for="Rform18" class="float-label">Name</label>
+              </div>
+              <div class="form-group  bs-float-label">
+                <label for="Rform19" class="float-label">Relationship</label>
+                <select name="relationship" class="relationship form-control float-input" id="Rform19" required>
+                  <option Value="Relationship" disabled selected>Relationship</option>
+                  <option Value="Father">Father</option>
+                  <option Value="Mother">Mother</option>
+                  <option Value="Brother">Brother</option>
+                  <option Value="Sister">Sister</option>
+                  <option Value="Gaurdian">Gaurdian</option>
+                  <option Value="Spouse">Spouse</option>
+                  <option Value="Other">Other</option>
+                </select>
+                <textarea name="specify" class="temp2 hidden form-control float-input" id="Rform20" placeholder="Specify"></textarea>
+              </div>
+              <div class="form-group bs-float-label">
+                <label for="Rform21" class="float-label">Phone Number</label>
+                <input type="tel" name="Emobilenumber" class="form-control float-input" id="Rform21" placeholder="Phone Number" required/>
+              </div>
+              <div class="form-group bs-float-label">
+                <label for="Rform22" class="float-label">Email</label>
+                <input type="email" name="Eemail" class="form-control float-input" id="Rform22" placeholder="Email" required/>
+              </div>
+              <div class="text-center">
+                <input type="button" name="prev2" class="prev_fs btn btn-outline-secondary" value="Previous"/>
+                <input type="submit" name="submit" class="btn btn-outline-secondary" value="Register" id="form2"/>
+              </div>
+            </fieldset>
+
+
+
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="py-5 bg-dark foot">
+    <div class="container-fluid">
+      <p class="m-0 text-center text-white">Copyright &copy; Agnel 2017</p>
+    </div>
+  </footer>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>

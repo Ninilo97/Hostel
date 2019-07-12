@@ -6,9 +6,6 @@ Website contains two pages, the first page is a simple landing page describing t
 
 The frontend is made with bootstrap while backend connection is done using PHP for database connection and jQuery for validation. Javascript is used for animation and some other website functionality.
 
-## Usage
--
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
